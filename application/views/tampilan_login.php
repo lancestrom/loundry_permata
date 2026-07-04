@@ -9,7 +9,8 @@
     <meta name="description" content="LOUNDRY PERMATA AMANDA YULIA PERNATASARI">
     <meta name="author" content="RAHMADIKA SURYA SETIAWAN">
 
-    <title>Laundry Permata</title>
+    <title>Permata Loundry</title>
+    <link rel="icon" href="<?= base_url() ?>assets/gambar/logo.png">
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url() ?>assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,22 +40,25 @@
                             <div class="col-md">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Loundry Permata</h1>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <img src="<?= base_url() ?>assets/gambar/logo.png" alt="Logo"
+                                                    class="img-fluid">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="<?= base_url('Login/proses_login') ?>" method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="text" class="form-control form-control-user" name="username"
+                                                placeholder="Masukkan Username...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="text" class="form-control form-control-user" name="password"
+                                                placeholder="Password">
                                         </div>
-
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                     </form>
                                     <hr>
                                 </div>
