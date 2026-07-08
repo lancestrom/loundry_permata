@@ -39,7 +39,7 @@ class Dashboard extends CI_Controller
             'keterangan' => $status
         );
 
-        $this->db->insert('order', $data);
+        $this->db->insert('transaksi', $data);
 
         // Redirect ke halaman orders
         redirect('Dashboard/orders');
