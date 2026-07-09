@@ -55,7 +55,7 @@
                 </h5>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url('Dashboard/simpan_order'); ?>" method="post">
+                <form id="form_order" action="<?php echo base_url('Dashboard/simpan_order'); ?>" method="post">
                     <div class="form-group">
                         <label>
                             <h6 class="text-uppercase font-weight-bolder">Nama Customer</h6>
@@ -86,7 +86,8 @@
                         <label>
                             <h6 class="text-uppercase font-weight-bolder">Nominal</h6>
                         </label>
-                        <input type="text" name="nominal" class="form-control" placeholder="Masukkan nominal">
+                        <input type="text" id="nominal_display" class="form-control" placeholder="Masukkan nominal">
+                        <input type="hidden" id="nominal" name="nominal">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -98,3 +99,30 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var displayInput = document.getElementById('nominal_display');
+        var hiddenInput = document.getElementById('nominal');
+        var form = document.getElementById('form_order');
+
+        function formatRupiah(value) {
+            var numberString = value.replace(/\D/g, '');
+            if (!numberString) {
+                return '';
+            }
+            return 'Rp ' + numberString.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        displayInput.addEventListener('input', function() {
+            var numeric = this.value.replace(/\D/g, '');
+            this.value = formatRupiah(numeric);
+            hiddenInput.value = numeric;
+        });
+
+        if (form) {
+            form.addEventListener('submit', function() {
+                hiddenInput.value = displayInput.value.replace(/\D/g, '');
+            });
+        }
+    });
+</script>

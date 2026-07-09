@@ -31,7 +31,11 @@ class Dashboard extends CI_Controller
         $id_order = rand('000000', '999999');
         $nama_customer = $this->input->post('nama_customer');
         $status_order = $this->input->post('status_order');
-        $nominal = $this->input->post('nominal');
+        // Ambil raw input dan bersihkan semua karakter selain digit,
+        // lalu cast ke integer untuk menjamin yang tersimpan adalah angka.
+        $nominal_raw = $this->input->post('nominal');
+        $nominal_digits = preg_replace('/[^0-9]/', '', (string) $nominal_raw);
+        $nominal = ($nominal_digits === '') ? 0 : (int) $nominal_digits;
         $status = 'proses';
 
         // Simpan data ke database
