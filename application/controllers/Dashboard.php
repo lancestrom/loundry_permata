@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
+        $this->Model_keamanan->getKeamanan();
         $isi['content'] = 'Admin/tampilan_home';
         $this->load->view('templates/header');
         $this->load->view('Admin/tampilan_dashboard', $isi);
@@ -15,6 +16,8 @@ class Dashboard extends CI_Controller
 
     public function orders()
     {
+        $this->Model_keamanan->getKeamanan();
+        $isi['transaksi'] = $this->Model_transaksi->dataTransaksi();
         $isi['content'] = 'Admin/tampilan_orders';
         $this->load->view('templates/header');
         $this->load->view('Admin/tampilan_dashboard', $isi);
@@ -23,6 +26,7 @@ class Dashboard extends CI_Controller
 
     public function simpan_order()
     {
+        $this->Model_keamanan->getKeamanan();
         // Ambil data dari form
         $id_order = rand('000000', '999999');
         $nama_customer = $this->input->post('nama_customer');

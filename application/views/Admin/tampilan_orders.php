@@ -10,6 +10,43 @@
         </div>
     </div>
 </div>
+<div class="row mt-2">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col">#</th>
+                                <th scope="col">NAMA CUSTOMER</th>
+                                <th scope="col">STATUS ORDER</th>
+                                <th scope="col">NOMINAL</th>
+                                <th scope="col">KETERANGAN</th>
+                                <th scope="col">TANGGAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <?php
+                                $no = 1;
+                                foreach ($transaksi as $row) {
+                                ?>
+                                    <td><?php echo $no++; ?></td>
+                                    <td class="text-center"><?= $row['nama_customer'] ?></td>
+                                    <td class="text-center"><?= $row['status_order'] ?></td>
+                                    <td class="text-center">Rp <?= number_format($row['nominal'], 0, ',', '.') ?></td>
+                                    <td class="text-center"><?= $row['keterangan'] ?></td>
+                                    <td class="text-center"><?= $row['timestamp'] ?></td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
