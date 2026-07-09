@@ -27,11 +27,6 @@
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url() ?>Dashboard">
 
-                <span>Invoices</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?= base_url() ?>Dashboard">
-
                 <span>Laporan</span></a>
         </li>
 
