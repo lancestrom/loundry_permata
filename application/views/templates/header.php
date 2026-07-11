@@ -3,11 +3,10 @@
 
 <head>
 
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="LOUNDRY PERMATA AMANDA YULIA PERNATASARI">
+    <meta name="author" content="RAHMADIKA SURYA SETIAWAN">
 
     <title>Permata Loundry</title>
     <link rel="icon" href="<?= base_url() ?>assets/gambar/logo.png">
