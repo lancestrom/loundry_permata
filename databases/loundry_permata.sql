@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 08, 2026 at 06:29 PM
+-- Generation Time: Jul 12, 2026 at 12:15 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -61,7 +61,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id_session`, `session_id`, `username`, `ipaddress`, `timestamp`) VALUES
-(2284, '4f0c7edba47acf3c8aa744a3a8bc503221dfa27593985c6d41a594697d2d6119', 'admin123', '::1', '2026-07-08 11:22:50');
+(2287, 'ff19fead61bae45a0966f02d48bd411300cfd3190eec5634c70df61aaefca184', 'admin123', '::1', '2026-07-11 07:59:10');
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,8 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_order`, `nama_customer`, `status_order`, `nominal`, `keterangan`, `timestamp`) VALUES
-(53733, 'Rusli', 'cuci_strika', 10000, 'proses', '2026-07-08 16:28:36');
+(53733, 'Rusli', 'cuci_strika', 10000, 'proses', '2026-07-08 16:28:36'),
+(557668, 'Anto', 'cuci_strika', 100000, 'proses', '2026-07-09 14:17:11');
 
 --
 -- Indexes for dumped tables
@@ -124,7 +125,7 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2285;
+  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2288;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
