@@ -2,6 +2,16 @@
     <div class="col-md">
         <div class="card">
             <div class="card-body">
+                <h5 class="text-uppercase">JUmlah nominal transaksi</h5>
+                <h5>Rp <?= number_format($nominal_transaksi['jumlah_nominal_transaksi'], 0, ',', '.') ?></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md mt-2">
+        <div class="card">
+            <div class="card-body">
                 <button type="button" class="btn btn-primary btn-sm font-weight-bolder text-uppercase"
                     data-toggle="modal" data-target="#exampleModal">
                     Tambah order
@@ -13,6 +23,8 @@
         </div>
     </div>
 </div>
+
+
 <div class="row mt-2">
     <div class="col-md">
         <div class="card">
@@ -84,12 +96,12 @@
                             <h6 class="text-uppercase font-weight-bolder">Nama Customer</h6>
                         </label>
                         <input type="text" name="nama_customer" class="form-control"
-                            placeholder="Masukkan nama customer">
+                            placeholder="Masukkan nama customer" required>
                     </div>
                     <div class="row">
                         <div class="col-md">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="status_order" value="cuci">
+                                <input class="form-check-input" type="radio" name="status_order" value="cuci" required>
                                 <label class="form-check-label" for="exampleRadios2">
                                     <h6 class="text-uppercase font-weight-bolder">CUCI</h6>
                                 </label>
@@ -97,7 +109,7 @@
                         </div>
                         <div class="col-md">
                             <div class=" form-check">
-                                <input class="form-check-input" type="radio" name="status_order" value="cuci_strika">
+                                <input class="form-check-input" type="radio" name="status_order" value="cuci_strika" required>
                                 <label class="form-check-label" for="exampleRadios3">
                                     <h6 class="text-uppercase font-weight-bolder">Cuci Strika</h6>
                                 </label>
@@ -109,8 +121,8 @@
                         <label>
                             <h6 class="text-uppercase font-weight-bolder">Nominal</h6>
                         </label>
-                        <input type="text" id="nominal_display" class="form-control" placeholder="Masukkan nominal">
-                        <input type="hidden" id="nominal" name="nominal">
+                        <input type="text" id="nominal_display" class="form-control" placeholder="Masukkan nominal" required>
+                        <input type="hidden" id="nominal" name="nominal" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

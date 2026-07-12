@@ -17,7 +17,10 @@ class Dashboard extends CI_Controller
     public function orders()
     {
         $this->Model_keamanan->getKeamanan();
+
         $isi['transaksi'] = $this->Model_transaksi->dataTransaksi();
+        $isi['nominal_transaksi'] = $this->Model_transaksi->countNominalTransaksi();
+
         $isi['content'] = 'Admin/tampilan_orders';
         $this->load->view('templates/header');
         $this->load->view('Admin/tampilan_dashboard', $isi);
@@ -28,7 +31,7 @@ class Dashboard extends CI_Controller
     {
         $this->Model_keamanan->getKeamanan();
         // Ambil data dari form
-        $id_order = rand('000000', '999999');
+        $id_order = rand('111111', '999999');
         $nama_customer = $this->input->post('nama_customer');
         $status_order = $this->input->post('status_order');
         // Ambil raw input dan bersihkan semua karakter selain digit,

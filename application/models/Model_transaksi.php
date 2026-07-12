@@ -3,6 +3,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Model_transaksi extends CI_Model
 {
+    public function countNominalTransaksi()
+    {
+        $sql = "SELECT SUM(transaksi.nominal) AS jumlah_nominal_transaksi FROM `transaksi`
+WHERE keterangan='SELESAI';";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+
     public function dataTransaksi()
     {
         $sql = "SELECT transaksi.id_order,transaksi.nama_customer,transaksi.status_order,transaksi.nominal,
