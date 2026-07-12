@@ -53,6 +53,45 @@ class Dashboard extends CI_Controller
         redirect('Dashboard/orders');
     }
 
+    public function hapus_transaksi()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $this->db->empty_table('transaksi');
+        redirect('Dashboard/orders');
+    }
+
+    public function hapus_transaksi_id($id_order)
+    {
+        $this->Model_keamanan->getKeamanan();
+        $this->db->where('id_order', $id_order);
+        $this->db->delete('transaksi');
+        redirect('Dashboard/orders');
+    }
+
+    public function ubah_transaksi()
+    {
+        $this->Model_keamanan->getKeamanan();
+        $id_order = $this->input->post('id_order');
+        $nama_customer = $this->input->post('nama_customer');
+        $keterangan = "selesai";
+        $nominal = $this->input->post('nominal');
+        $timestamp = $this->input->post('timestamp');
+
+        // Update data di database
+        $data = array(
+            'nama_customer' => $nama_customer,
+            'keterangan' => $keterangan,
+            'nominal' => $nominal,
+            'timestamp' => $timestamp
+        );
+
+        $this->db->where('id_order', $id_order);
+        $this->db->update('transaksi', $data);
+
+        // Redirect ke halaman orders
+        redirect('Dashboard/orders');
+    }
+
     public function logout()
     {
         // Get session_id dari cookie

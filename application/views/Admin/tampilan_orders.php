@@ -6,6 +6,9 @@
                     data-toggle="modal" data-target="#exampleModal">
                     Tambah order
                 </button>
+                <a href="<?= base_url('Dashboard/hapus_transaksi') ?>" class="btn btn-danger btn-sm font-weight-bolder text-uppercase">
+                    Hapus Semua Order
+                </a>
             </div>
         </div>
     </div>
@@ -18,15 +21,16 @@
                     <table class="table table-striped table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr class="text-center">
-                                <th scope="col">#</th>
+                                <th scope="col" class="text-center">#</th>
                                 <th scope="col">NAMA CUSTOMER</th>
                                 <th scope="col">STATUS ORDER</th>
                                 <th scope="col">NOMINAL</th>
                                 <th scope="col">KETERANGAN</th>
                                 <th scope="col">TANGGAL</th>
+                                <th scope="col">AKSI</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-uppercase">
                             <tr>
                                 <?php
                                 $no = 1;
@@ -36,8 +40,27 @@
                                     <td class="text-center"><?= $row['nama_customer'] ?></td>
                                     <td class="text-center"><?= $row['status_order'] ?></td>
                                     <td class="text-center">Rp <?= number_format($row['nominal'], 0, ',', '.') ?></td>
-                                    <td class="text-center"><?= $row['keterangan'] ?></td>
-                                    <td class="text-center"><?= $row['timestamp'] ?></td>
+                                    <td class="text-center text-uppercase"><?= $row['keterangan'] ?></td>
+                                    <td class="text-center"><?= $row['tanggal'] ?></td>
+                                    <td class="text-center">
+                                        <div class="row">
+                                            <div class="col-md">
+                                                <a href="<?= base_url('Dashboard/hapus_transaksi_id/' . $row['id_order']) ?>" class="btn btn-danger btn-sm font-weight-bolder text-uppercase">
+                                                    Hapus ID
+                                                </a>
+                                            </div>
+                                            <div class="col-md">
+                                                <form action="<?= base_url('Dashboard/ubah_transaksi') ?>" method="post">
+                                                    <input type="text" name="id_order" value="<?= $row['id_order'] ?>" hidden>
+                                                    <input type="text" name="nama_customer" value="<?= $row['nama_customer'] ?>" hidden>
+                                                    <input type="text" name="keterangan" value="<?= $row['keterangan'] ?>" hidden>
+                                                    <input type="text" name="nominal" value="<?= $row['nominal'] ?>" hidden>
+                                                    <input type="text" name="timestamp" value="<?= $row['timestamp'] ?>" hidden>
+                                                    <button type="submit" class="btn btn-primary btn-sm">TRANSAKSI</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
                             </tr>
                         <?php } ?>
                         </tbody>
