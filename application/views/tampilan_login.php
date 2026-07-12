@@ -61,6 +61,8 @@
                                         </button>
                                     </form>
                                     <hr>
+                                    <h5 class="text-center text-danger">Username : admin123</h5>
+                                    <h5 class="text-center text-danger">Password : Permata123@</h5>
                                 </div>
                             </div>
                         </div>
