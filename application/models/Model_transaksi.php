@@ -13,7 +13,7 @@ WHERE keterangan='SELESAI';";
 
     public function dataTransaksi()
     {
-        $sql = "SELECT transaksi.id_order,transaksi.nama_customer,transaksi.status_order,transaksi.nominal,
+        $sql = "SELECT transaksi.id_order,transaksi.nama_customer,transaksi.status_order,transaksi.durasi,transaksi.berat,transaksi.nominal,transaksi.status_transaksi,
 transaksi.keterangan,transaksi.timestamp,
 CONCAT(
     DAY(transaksi.timestamp), ' ',

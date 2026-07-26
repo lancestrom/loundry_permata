@@ -12,10 +12,10 @@
     <div class="col-md mt-2">
         <div class="card">
             <div class="card-body">
-                <button type="button" class="btn btn-primary btn-sm font-weight-bolder text-uppercase"
+                <!-- <button type="button" class="btn btn-primary btn-sm font-weight-bolder text-uppercase"
                     data-toggle="modal" data-target="#exampleModal">
                     Tambah order
-                </button>
+                </button> -->
                 <a href="<?= base_url('Dashboard/hapus_transaksi') ?>" class="btn btn-danger btn-sm font-weight-bolder text-uppercase">
                     Hapus Semua Order
                 </a>
@@ -36,10 +36,13 @@
                                 <th scope="col" class="text-center">#</th>
                                 <th scope="col">NAMA CUSTOMER</th>
                                 <th scope="col">STATUS ORDER</th>
+                                <th scope="col">DURASI</th>
+                                <th scope="col">BERAT</th>
                                 <th scope="col">NOMINAL</th>
+                                <th scope="col">STATUS TRANSAKSI</th>
                                 <th scope="col">KETERANGAN</th>
                                 <th scope="col">TANGGAL</th>
-                                <th scope="col">AKSI</th>
+                                <!-- <th scope="col">AKSI</th> -->
                             </tr>
                         </thead>
                         <tbody class="text-uppercase">
@@ -51,10 +54,13 @@
                                     <td><?php echo $no++; ?></td>
                                     <td class="text-center"><?= $row['nama_customer'] ?></td>
                                     <td class="text-center"><?= $row['status_order'] ?></td>
+                                    <td class="text-center"><?= $row['durasi'] ?></td>
+                                    <td class="text-center"><?= $row['berat'] ?></td>
                                     <td class="text-center">Rp <?= number_format($row['nominal'], 0, ',', '.') ?></td>
-                                    <td class="text-center text-uppercase"><?= $row['keterangan'] ?></td>
+                                    <td class="text-center text-uppercase"><?= $row['status_transaksi'] ?></td>
+                                    <td class="text-center"><?= $row['keterangan'] ?></td>
                                     <td class="text-center"><?= $row['tanggal'] ?></td>
-                                    <td class="text-center">
+                                    <!-- <td class="text-center">
                                         <div class="row">
                                             <div class="col-md">
                                                 <a href="<?= base_url('Dashboard/hapus_transaksi_id/' . $row['id_order']) ?>" class="btn btn-danger btn-sm font-weight-bolder text-uppercase">
@@ -72,7 +78,7 @@
                                                 </form>
                                             </div>
                                         </div>
-                                    </td>
+                                    </td> -->
                             </tr>
                         <?php } ?>
                         </tbody>
