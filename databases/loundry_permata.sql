@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 12, 2026 at 12:15 PM
+-- Generation Time: Sep 26, 2026 at 03:03 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -61,7 +61,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id_session`, `session_id`, `username`, `ipaddress`, `timestamp`) VALUES
-(2287, 'ff19fead61bae45a0966f02d48bd411300cfd3190eec5634c70df61aaefca184', 'admin123', '::1', '2026-07-11 07:59:10');
+(2288, '03f53e6ae5e634f4e51277237fdebc69c000ff468fbe16e4afffcb295394c33a', 'admin123', '::1', '2026-09-26 06:27:11');
 
 -- --------------------------------------------------------
 
@@ -73,8 +73,11 @@ CREATE TABLE `transaksi` (
   `id_order` int(11) NOT NULL,
   `nama_customer` text NOT NULL,
   `status_order` text NOT NULL,
+  `durasi` text NOT NULL,
+  `berat` int(100) NOT NULL,
   `nominal` int(11) NOT NULL,
   `keterangan` text NOT NULL,
+  `status_transaksi` text NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -82,9 +85,8 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_order`, `nama_customer`, `status_order`, `nominal`, `keterangan`, `timestamp`) VALUES
-(53733, 'Rusli', 'cuci_strika', 10000, 'proses', '2026-07-08 16:28:36'),
-(557668, 'Anto', 'cuci_strika', 100000, 'proses', '2026-07-09 14:17:11');
+INSERT INTO `transaksi` (`id_order`, `nama_customer`, `status_order`, `durasi`, `berat`, `nominal`, `keterangan`, `status_transaksi`, `timestamp`) VALUES
+(35762858, 'Anto', 'cuci_lipat', 'regular', 15, 50000, 'Transaksi baru', 'Belum Lunas', '2026-09-26 07:14:15');
 
 --
 -- Indexes for dumped tables
@@ -125,7 +127,7 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2288;
+  MODIFY `id_session` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2289;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
